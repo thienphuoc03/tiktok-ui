@@ -1,4 +1,4 @@
-import { HeaderOnly } from '~/components/GlobalStyles/Layouts';
+import { HeaderOnly } from '~/components/Layouts';
 import {
   HomePage,
   FollowingPage,
