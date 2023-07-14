@@ -12,6 +12,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -21,14 +22,15 @@ const Header = () => {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
+        {/* header left */}
         <div className={cx('logo')}>
           <img src={images.logo} alt="tiktok" />
         </div>
 
+        {/* header between */}
         <Tippy
           interactive
-          // visible={searchResult.length > 0}
-          visible
+          visible={searchResult.length > 0}
           render={(attrs) => (
             <div className={cx('search-result')} tabIndex="-1" {...attrs}>
               <PopperWrapper>
@@ -55,7 +57,11 @@ const Header = () => {
           </div>
         </Tippy>
 
-        <div className={cx('actions')}></div>
+        {/* header right */}
+        <div className={cx('actions')}>
+          <Button text>Upload</Button>
+          <Button primary>Login</Button>
+        </div>
       </div>
     </header>
   );
